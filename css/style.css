@@ -1,0 +1,124 @@
+/* NotiFlash - hoja de estilos compartida */
+* { box-sizing: border-box; }
+
+body {
+    background-color: #f2f2f2;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b71c1c;
+    color: white;
+    text-align: center;
+    padding: 25px 10px 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    letter-spacing: 6px;
+}
+header p { margin: 5px 0 0; font-size: 14px; }
+
+nav {
+    background-color: #212121;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav li { margin: 0; }
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 25px;
+}
+nav a:hover {
+    background-color: #b71c1c;
+    color: #ffeb3b;
+}
+nav a.activo { border-bottom: 4px solid #ffeb3b; }
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 34px;
+    color: #000;
+    border-bottom: 3px solid #b71c1c;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.noticia {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    margin: 0;
+}
+.noticia:hover {
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+.noticia h2 {
+    font-size: 22px;
+    margin: 12px 0 8px;
+    color: #212121;
+}
+.noticia img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.noticia p {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Clases personalizadas por seccion */
+.destacada { border: 3px solid #b71c1c; }                         /* Inicio */
+.deporte { border-left: 8px solid #1565c0; }                      /* Deporte */
+.farandula { border-left: 8px solid #d81b60; background-color: #fff0f6; } /* Farandula */
+.politica { border-left: 8px solid #2e7d32; }                     /* Politica */
+.justicia { border-left: 8px solid #f9a825; background-color: #fffde7; }  /* Justicia */
+
+footer {
+    background-color: #212121;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+@media (max-width: 800px) {
+    .noticias { grid-template-columns: 1fr; }
+    nav ul { flex-wrap: wrap; }
+}
